@@ -1,0 +1,257 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #eaf4ff, #f8fbff);
+    color: #1f2937;
+    min-height: 100vh;
+}
+
+/* HEADER */
+header {
+    background: linear-gradient(135deg, #1769d2, #3b8bea);
+    color: white;
+    text-align: center;
+    padding: 45px 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+}
+
+header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+/* CONTAINER */
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 35px auto;
+}
+
+/* CARD PILIHAN */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    transition: 0.25s;
+    border: 1px solid #e5e7eb;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.card h2 {
+    color: #1769d2;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #6b7280;
+}
+
+/* BUTTON */
+button {
+    border: none;
+    background: #1769d2;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #0f56b3;
+    transform: scale(1.03);
+}
+
+.batal {
+    background: #6b7280;
+    margin-left: 8px;
+}
+
+.batal:hover {
+    background: #4b5563;
+}
+
+/* FORM */
+.form-container {
+    display: none;
+    background: white;
+    margin-top: 30px;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.form-container h2 {
+    color: #1769d2;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 12px;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    font-size: 15px;
+    outline: none;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #1769d2;
+    box-shadow: 0 0 0 3px rgba(23, 105, 210, 0.1);
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+form button {
+    margin-top: 20px;
+}
+
+/* LAPORAN */
+.laporan-container {
+    margin-top: 40px;
+}
+
+.laporan-container > h2 {
+    color: #1769d2;
+    margin-bottom: 20px;
+}
+
+/* SEARCH + FILTER */
+.filter-container {
+    display: grid;
+    grid-template-columns: 1fr 220px;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+/* KARTU LAPORAN */
+.laporan {
+    background: white;
+    border-left: 5px solid #1769d2;
+    padding: 22px;
+    margin-bottom: 15px;
+    border-radius: 14px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.07);
+    animation: muncul 0.3s ease;
+}
+
+.laporan h3 {
+    color: #1769d2;
+    margin-bottom: 15px;
+}
+
+.laporan p {
+    margin: 8px 0;
+    line-height: 1.5;
+}
+
+.tidak-ada {
+    background: white;
+    padding: 25px;
+    border-radius: 14px;
+    text-align: center;
+    color: #6b7280;
+}
+
+/* ANIMASI */
+@keyframes muncul {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* HP */
+@media (max-width: 700px) {
+
+    header {
+        padding: 35px 15px;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    .container {
+        width: 94%;
+    }
+
+    .card-container {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-container {
+        grid-template-columns: 1fr;
+    }
+
+    .form-container {
+        padding: 20px;
+    }
+
+    .laporan {
+        padding: 18px;
+    }
+}
+
+.laporan {
+    position: relative;
+}
+
+.btn-hapus {
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+
+    padding: 5px 10px;
+    font-size: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}

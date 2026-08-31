@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FindIt School</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>🔎 FindIt School</h1>
+        <p>Temukan dan laporkan barang yang hilang di sekolah.</p>
+    </header>
+
+    <div class="container">
+
+        <div class="card-container">
+
+            <div class="card">
+                <h2>📦 Barang Hilang</h2>
+                <p>Laporkan barang kamu yang hilang.</p>
+                <br>
+                <button onclick="bukaForm('hilang')">Laporkan</button>
+            </div>
+
+            <div class="card">
+                <h2>✅ Barang Ditemukan</h2>
+                <p>Laporkan barang yang kamu temukan.</p>
+                <br>
+                <button onclick="bukaForm('ditemukan')">Laporkan</button>
+            </div>
+
+        </div>
+
+        <!-- FORM LAPORAN -->
+        <div id="formLaporan" class="form-container">
+
+            <h2 id="judulForm">📝 Laporkan Barang</h2>
+
+            <form onsubmit="kirimLaporan(event)">
+
+                <label>Nama Barang</label>
+                <input type="text" id="namaBarang" placeholder="Contoh: Dompet" required>
+
+                <label id="labelLokasi">Lokasi</label>
+                <input type="text" id="lokasi" placeholder="Contoh: Kelas 9A" required>
+
+                <label id="labelTanggal">Tanggal</label>
+                <input type="date" id="tanggal" required>
+                
+                <label>Deskripsi</label>
+                <textarea id="deskripsi" placeholder="Jelaskan ciri-ciri barang..." required></textarea>
+
+                <button type="submit">Kirim Laporan</button>
+                <button type="button" class="batal" onclick="tutupForm()">Batal</button>
+
+            </form>
+
+        </div>
+
+        <!-- HASIL LAPORAN -->
+        <div class="laporan-container">
+
+    <div class="filter-container">
+
+        <input
+            type="text"
+            id="searchLaporan"
+            placeholder="🔎 Cari barang atau lokasi..."
+        >
+
+        <select id="filterJenis">
+            <option value="semua">Semua Laporan</option>
+            <option value="hilang">📦 Barang Hilang</option>
+            <option value="ditemukan">✅ Barang Ditemukan</option>
+        </select>
+
+    </div>
+
+    <div id="daftarLaporan"></div>
+
+</div>
+
+<script type="module" src="script.js"></script>
+
+</body>
+</html>
